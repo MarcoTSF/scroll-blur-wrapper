@@ -9,7 +9,7 @@ import { ScrollBlurWrapper } from "./scroll-blur-wrapper";
 
 export default function exemplo() {
   return (
-    <ScrollBlurWrapper minvelocity={30} blurdirection="vertical">
+    <ScrollBlurWrapper minVelocity={30} blurDirection="vertical">
       <div className="minha-secção">
         teu conteúdo
       </div>

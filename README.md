@@ -2,7 +2,7 @@
 
 É um componente feito em React com TypeScript, ele é muito leve e é totalmente executado no lado do cliente, ele aplica um efeito de desfoque de movimento dinâmico aos seus filhos com base na velocidade de rolagem do usuário
 
-<p><b>Demo:<b> <a href="https://freddydanilo.com">Freddy Danilo</a></p>
+<p><b>Demo:<b> <a href="https://freddydanilo.com" target="_blank">Freddy Danilo</a></p>
 
 ## Como usar
 

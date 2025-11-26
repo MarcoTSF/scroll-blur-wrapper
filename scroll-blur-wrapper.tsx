@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, Fragment, ReactNode, useEffect, useId, useRef } from "react";
+import React { Fragment, useEffect, useId, useRef } from "react";
 
 type Enumerate<
   N extends number,
@@ -12,9 +12,9 @@ type Enumerate<
 type Range<N extends number> = Enumerate<N>;
 
 interface ScrollBlurWrapperProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   minVelocity?: Range<101>;
   blurDirection?: "vertical" | "horizontal";
 }

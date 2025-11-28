@@ -1,11 +1,17 @@
 # Scroll Blur Wrapper
 
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
 Um componente React com TypeScript leve e de alto desempenho que aplica um efeito de *motion blur* (desfoque de movimento) dinâmico aos elementos filhos, baseando-se na velocidade de rolagem do usuário.
 
 Totalmente executado no lado do cliente (Client Side), otimizado para GPU e acessível.
 
 <p align="center">
-  <b>Demo:</b> <a href="https://freddydanilo.com" target="_blank" rel="noopener noreferrer">Freddy Danilo</a>
+  <br />
+  <b>Demo:</b> <a href="https://freddydanilo.com">Freddy Danilo</a>
+  <br />
 </p>
 
 ## ✨ Funcionalidades
@@ -72,7 +78,7 @@ export default function ExemploContainer() {
 ## ❤️ Apoie este projeto
 Se este componente te ajudou, considere fazer uma doação ou deixar uma estrela!
 
-<a href="https://www.paypal.com/donate/?hosted_button_id=RA8KH3JFCKXCS" target="_blank" rel="noopener noreferrer"> <img src="https://www.google.com/search?q=https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate with PayPal" /> </a>
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=RA8KH3JFCKXCS)
 
 ### ⭐ Deixe uma estrela no repositório
 Uma simples estrela ajuda muito o projeto a crescer e alcançar mais desenvolvedores.

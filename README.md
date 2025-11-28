@@ -1,39 +1,80 @@
 # Scroll Blur Wrapper
 
-É um componente feito em React com TypeScript, ele é muito leve e é totalmente executado no lado do cliente, ele aplica um efeito de desfoque de movimento dinâmico aos seus filhos com base na velocidade de rolagem do usuário
+Um componente React com TypeScript leve e de alto desempenho que aplica um efeito de *motion blur* (desfoque de movimento) dinâmico aos elementos filhos, baseando-se na velocidade de rolagem do usuário.
 
-<p><b>Demo:<b> <a href="https://freddydanilo.com" target="_blank">Freddy Danilo</a></p>
+Totalmente executado no lado do cliente (Client Side), otimizado para GPU e acessível.
 
-## Como usar
+<p align="center">
+  <b>Demo:</b> <a href="https://freddydanilo.com" target="_blank" rel="noopener noreferrer">Freddy Danilo</a>
+</p>
+
+## ✨ Funcionalidades
+
+- **Alta Performance:** Otimizado para usar aceleração de hardware (GPU) e evitar re-renderizações desnecessárias.
+- **Frame Rate Independent:** O efeito visual é consistente em monitores de 60Hz, 120Hz ou 144Hz+.
+- **Acessível:** Respeita automaticamente a preferência do sistema `prefers-reduced-motion`, desativando o efeito para usuários sensíveis a movimento.
+- **Visual Correto:** Utiliza `sRGB` para cores fiéis e corrige artefatos nas bordas do desfoque.
+- **Zero Dependências:** Não requer bibliotecas de animação pesadas.
+
+## 💻 Como usar
+
+Copie o componente para o seu projeto e importe-o onde desejar:
+
+### Uso Básico
 
 ```tsx
-import { ScrollBlurWrapper } from "./scroll-blur-wrapper";
+import { ScrollBlurWrapper } from "./components/scroll-blur-wrapper";
 
 export default function Exemplo() {
   return (
     <ScrollBlurWrapper>
-      <div>O teu conteúdo</div>
+      <div className="conteudo">
+        <h1>Meu Conteúdo com Blur</h1>
+        {/* ... restante do conteúdo ... */}
+      </div>
     </ScrollBlurWrapper>
+  );
+}
+```
+### Uso com Container de Scroll Personalizado
+Se o scroll não for na janela (window), mas sim em uma div interna:
+
+```tsx
+import { useRef } from "react";
+import { ScrollBlurWrapper } from "./components/scroll-blur-wrapper";
+
+export default function ExemploContainer() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div ref={containerRef} style={{ overflowY: "auto", height: "100vh" }}>
+      <ScrollBlurWrapper scrollContainer={containerRef}>
+         {/* Conteúdo aqui */}
+      </ScrollBlurWrapper>
+    </div>
   );
 }
 ```
 
 ## Props
 
-| propriedade     | tipo                           | padrão       | descrição                                |
-| --------------- | ------------------------------ | ------------ | ---------------------------------------- |
-| `children`      | reactnode                      | obrigatório  | elementos a serem envolvidos             |
-| `className`     | string                         | opcional     | classes tailwinds (caso uses)            |
-| `style`         | cssproperties                  | opcional     | estilos inline                           |
-| `minVelocity`   | número (0–100)                 | `20`         | velocidade mínima para ativar o desfoque |
-| `blurDirection` | `"vertical"` ou `"horizontal"` | `"vertical"` | orientação do desfoque                   |
+| Propriedade | Tipo | Padrão | Descrição |
+| :--- | :--- | :--- | :--- |
+| `children` | `ReactNode` | **Obrigatório** | Elementos a serem envolvidos pelo efeito. |
+| `className` | `string` | `undefined` | Classes CSS (compatível com Tailwind). |
+| `style` | `CSSProperties` | `undefined` | Estilos inline adicionais. |
+| `minVelocity` | `number` | `5` | Velocidade mínima de scroll para iniciar o desfoque. |
+| `maxBlur` | `number` | `10` | Limite máximo visual do desfoque (em px). |
+| `strength` | `number` | `0.2` | Multiplicador de intensidade do efeito. |
+| `blurDirection` | `"vertical" \| "horizontal"` | `"vertical"` | Orientação do desfoque. |
+| `scrollContainer` | `RefObject<HTMLElement>` | `undefined` | Referência para um container de scroll (caso não seja a janela). |
 
-## ❤️ Apoia este projeto
+## ❤️ Apoie este projeto
+Se este componente te ajudou, considere fazer uma doação ou deixar uma estrela!
 
-<a href="https://www.paypal.com/donate/?hosted_button_id=RA8KH3JFCKXCS" target="_blank">Clica aqui para apoiar</a>
+<a href="https://www.paypal.com/donate/?hosted_button_id=RA8KH3JFCKXCS" target="_blank" rel="noopener noreferrer"> <img src="https://www.google.com/search?q=https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate with PayPal" /> </a>
 
-### ⭐ **Deixa uma estrela no repositório**
+### ⭐ Deixe uma estrela no repositório
+Uma simples estrela ajuda muito o projeto a crescer e alcançar mais desenvolvedores.
 
-Uma simples estrela ajuda bué o projeto a crescer e alcançar mais desenvolvedores.
-
-By: Freddy Danilo
+Desenvolvido por: Freddy Danilo
